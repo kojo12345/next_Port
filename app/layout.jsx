@@ -1,5 +1,12 @@
 import localFont from "next/font/local";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["100","200","300","400","500","600","700","800"],
+  variable: '--font-jetbrainsMono',
+})
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,7 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${jetbrainsMono.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
